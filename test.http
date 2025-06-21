@@ -1,0 +1,105 @@
+### Health Check
+GET http://localhost:3000/api/health
+
+### API Documentation
+GET http://localhost:3000/
+
+###
+### USERS API TESTS
+###
+
+### Get all users
+GET http://localhost:3000/api/users
+
+### Get user by ID
+GET http://localhost:3000/api/users/1
+
+### Create new user
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "name": "Alice Johnson",
+  "email": "alice@example.com",
+  "age": 28
+}
+
+### Update user
+PUT http://localhost:3000/api/users/1
+Content-Type: application/json
+
+{
+  "name": "John Updated",
+  "email": "john.updated@example.com",
+  "age": 31
+}
+
+### Delete user (be careful!)
+# DELETE http://localhost:3000/api/users/3
+
+###
+### PRODUCTS API TESTS
+###
+
+### Get all products
+GET http://localhost:3000/api/products
+
+### Get products with price filter
+GET http://localhost:3000/api/products?minPrice=500&maxPrice=1000
+
+### Create new product
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "name": "Gaming Mouse",
+  "description": "High-precision gaming mouse with RGB lighting",
+  "price": 79.99,
+  "stock": 50
+}
+
+### Update product
+PUT http://localhost:3000/api/products/1
+Content-Type: application/json
+
+{
+  "name": "Gaming Laptop Pro",
+  "description": "High-performance gaming laptop with RTX 4080",
+  "price": 1299.99,
+  "stock": 8
+}
+
+###
+### ORDERS API TESTS
+###
+
+### Get all orders
+GET http://localhost:3000/api/orders
+
+### Create new order
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "product_id": 2,
+  "quantity": 2
+}
+
+### Update order status
+PUT http://localhost:3000/api/orders/1/status
+Content-Type: application/json
+
+{
+  "status": "shipped"
+}
+
+###
+### ANALYTICS API TESTS
+###
+
+### Get summary statistics
+GET http://localhost:3000/api/analytics/summary
+
+### Get top selling products
+GET http://localhost:3000/api/analytics/top-products
